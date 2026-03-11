@@ -1,256 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooftoply Home Services — Kitchen & Bathroom Remodeling in the Bay Area</title>
-    <meta name="description" content="Professional kitchen and bathroom remodeling in the Bay Area. 35% off kitchens, 25% off bathrooms, free 3D design. Licensed & insured. 21+ years experience.">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; }
-        
-        .hero {
-            background: linear-gradient(135deg, rgba(15,23,42,0.92), rgba(30,58,95,0.88)),
-                        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80') center/cover;
-            color: white;
-            padding: 80px 20px 100px;
-            text-align: center;
-        }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 16px; font-weight: 800; letter-spacing: -0.5px; }
-        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
-        .hero-badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 24px; }
-        
-        .cta-btn {
-            display: inline-block;
-            background: #f59e0b;
-            color: #1a1a1a;
-            padding: 16px 40px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,0.4); }
-        
-        .phone-link { display: block; margin-top: 16px; color: white; font-size: 1.1rem; text-decoration: none; opacity: 0.9; }
-        .phone-link:hover { opacity: 1; }
-        
-        .offers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            max-width: 960px;
-            margin: -50px auto 60px;
-            padding: 0 20px;
-        }
-        .offer-card {
-            background: white;
-            border-radius: 12px;
-            padding: 32px 24px;
-            text-align: center;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-        }
-        .offer-card .discount { font-size: 2.4rem; font-weight: 800; color: #f59e0b; }
-        .offer-card h3 { margin: 8px 0; font-size: 1.2rem; }
-        .offer-card p { color: #666; font-size: 0.95rem; }
-        
-        .section { padding: 60px 20px; max-width: 960px; margin: 0 auto; }
-        .section h2 { font-size: 2rem; margin-bottom: 16px; text-align: center; font-weight: 700; }
-        .section .subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 1.05rem; }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-        .service-item {
-            background: #f8fafc;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .service-item img { width: 100%; height: 200px; object-fit: cover; }
-        .service-item .content { padding: 20px; }
-        .service-item h3 { font-size: 1.15rem; margin-bottom: 8px; }
-        .service-item p { color: #666; font-size: 0.9rem; }
-        
-        .process {
-            background: #f8fafc;
-            padding: 60px 20px;
-        }
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .step { text-align: center; padding: 20px; }
-        .step-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px; height: 48px;
-            background: #1e3a5f;
-            color: white;
-            border-radius: 50%;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-        }
-        .step h3 { margin-bottom: 8px; font-size: 1.05rem; }
-        .step p { color: #666; font-size: 0.9rem; }
-        
-        .trust {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .trust-items { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
-        .trust-item { text-align: center; }
-        .trust-item .num { font-size: 2rem; font-weight: 800; color: #1e3a5f; }
-        .trust-item .label { color: #666; font-size: 0.9rem; }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #1e3a5f, #0f172a);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .cta-section h2 { font-size: 2rem; margin-bottom: 12px; }
-        .cta-section p { opacity: 0.9; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
-        
-        footer {
-            background: #0f172a;
-            color: rgba(255,255,255,0.6);
-            text-align: center;
-            padding: 24px 20px;
-            font-size: 0.85rem;
-        }
-        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
-        
-        @media (max-width: 640px) {
-            .hero h1 { font-size: 2rem; }
-            .offers { grid-template-columns: 1fr; margin-top: -30px; }
-            .trust-items { gap: 24px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoofTopLy — Premium Roofing Solutions for Bay Area Homes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: #374151; line-height: 1.6; }
+h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; color: #1B2A41; line-height: 1.2; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.btn-primary {
+  display: inline-block; background: #3B82F6; color: #fff; padding: 16px 36px;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem;
+  border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s;
+}
+.btn-primary:hover { background: #2563EB; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,0.3); }
+.btn-secondary {
+  display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25);
+  color: #fff; padding: 15px 34px; font-family: 'Inter', sans-serif; font-weight: 600;
+  font-size: 1rem; border-radius: 8px; transition: all 0.3s; backdrop-filter: blur(4px);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+.section-label {
+  display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 2.5px;
+  text-transform: uppercase; color: #3B82F6; margin-bottom: 12px;
+}
+
+/* ─── Nav ─── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: #fff; box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+.nav .container {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 16px; padding-bottom: 16px;
+}
+.logo-mark {
+  font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.4rem; color: #1B2A41;
+  letter-spacing: -0.5px;
+}
+.logo-mark span { color: #3B82F6; }
+.nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+.nav-links a { font-size: 0.9rem; font-weight: 500; color: #374151; transition: color 0.3s; }
+.nav-links a:hover { color: #3B82F6; }
+.nav-cta-wrap { display: flex; align-items: center; gap: 20px; }
+.nav-phone { font-weight: 700; font-size: 0.95rem; color: #1B2A41; }
+.nav-btn {
+  background: #3B82F6; color: #fff; padding: 10px 24px; border-radius: 8px;
+  font-weight: 600; font-size: 0.9rem; transition: background 0.3s;
+}
+.nav-btn:hover { background: #2563EB; }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
+.mobile-toggle span { display: block; width: 22px; height: 2px; background: #1B2A41; margin: 5px 0; }
+
+/* ─── Hero ─── */
+.hero {
+  position: relative; padding: 180px 0 120px; overflow: hidden;
+  background: linear-gradient(165deg, #0F172A 0%, #1E293B 50%, #1B2A41 100%);
+}
+.hero::after {
+  content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  position: relative; z-index: 2;
+}
+.hero h1 { font-size: 3.6rem; color: #fff; margin-bottom: 24px; }
+.hero h1 span { color: #3B82F6; }
+.hero-text p { font-size: 1.15rem; color: #94A3B8; margin-bottom: 40px; line-height: 1.8; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 56px; }
+.hero-metrics { display: flex; gap: 40px; }
+.metric { border-left: 2px solid rgba(59,130,246,0.3); padding-left: 20px; }
+.metric h3 { font-size: 2rem; color: #fff; margin-bottom: 2px; }
+.metric p { font-size: 0.85rem; color: #64748B; font-weight: 500; }
+.hero-visual { position: relative; }
+.hero-visual img {
+  width: 100%; height: 520px; object-fit: cover; border-radius: 16px;
+  box-shadow: 0 32px 64px rgba(0,0,0,0.4);
+}
+.hero-badge-float {
+  position: absolute; bottom: -24px; left: 32px; background: #fff; padding: 20px 28px;
+  border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 16px;
+}
+.badge-icon {
+  width: 48px; height: 48px; background: #EFF6FF; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; color: #3B82F6;
+  font-weight: 800; font-size: 1.1rem;
+}
+.badge-text strong { display: block; font-size: 1rem; color: #1B2A41; }
+.badge-text span { font-size: 0.8rem; color: #6B7280; }
+
+/* ─── Seasonal Banner ─── */
+.seasonal {
+  background: #EFF6FF; border-bottom: 1px solid #DBEAFE; padding: 20px 0;
+}
+.seasonal .container {
+  display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap;
+  text-align: center;
+}
+.seasonal strong { color: #1B2A41; font-size: 1rem; }
+.seasonal span { color: #3B82F6; font-weight: 700; }
+.seasonal-divider { width: 1px; height: 24px; background: #BFDBFE; }
+
+/* ─── Services ─── */
+.services { padding: 100px 0; background: #fff; }
+.services-header { text-align: center; margin-bottom: 56px; }
+.services-header h2 { font-size: 2.4rem; margin-bottom: 16px; }
+.services-header p { font-size: 1.05rem; color: #6B7280; max-width: 560px; margin: 0 auto; }
+.services-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.svc-card {
+  display: flex; gap: 24px; padding: 32px; background: #F8FAFC; border-radius: 12px;
+  border: 1px solid #F1F5F9; transition: all 0.3s;
+}
+.svc-card:hover { background: #fff; border-color: #DBEAFE; box-shadow: 0 4px 16px rgba(59,130,246,0.08); transform: translateY(-2px); }
+.svc-num {
+  flex-shrink: 0; width: 48px; height: 48px; background: #1B2A41; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #3B82F6;
+}
+.svc-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.svc-card p { font-size: 0.9rem; color: #6B7280; line-height: 1.7; }
+
+/* ─── How It Works ─── */
+.how-it-works { padding: 100px 0; background: #F8FAFC; }
+.hiw-header { text-align: center; margin-bottom: 64px; }
+.hiw-header h2 { font-size: 2.4rem; margin-bottom: 16px; }
+.hiw-header p { font-size: 1.05rem; color: #6B7280; max-width: 560px; margin: 0 auto; }
+.hiw-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.hiw-step {
+  text-align: center; padding: 32px 16px; background: #fff; border-radius: 12px;
+  border: 1px solid #E5E7EB; position: relative; transition: all 0.3s;
+}
+.hiw-step:hover { border-color: #3B82F6; box-shadow: 0 4px 16px rgba(59,130,246,0.1); }
+.hiw-number {
+  font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: #DBEAFE;
+  margin-bottom: 12px; line-height: 1;
+}
+.hiw-step h4 { font-size: 1rem; margin-bottom: 8px; }
+.hiw-step p { font-size: 0.82rem; color: #6B7280; line-height: 1.6; }
+
+/* ─── Split Feature ─── */
+.split-feature { padding: 100px 0; background: #fff; }
+.split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.split-image { border-radius: 16px; overflow: hidden; }
+.split-image img { width: 100%; height: 500px; object-fit: cover; }
+.split-content h2 { font-size: 2.4rem; margin-bottom: 20px; }
+.split-content > p { font-size: 1.05rem; color: #6B7280; margin-bottom: 36px; line-height: 1.8; }
+.check-list { list-style: none; margin-bottom: 36px; }
+.check-list li {
+  display: flex; gap: 14px; align-items: center; margin-bottom: 16px;
+  font-size: 0.95rem; font-weight: 500; color: #1B2A41;
+}
+.check-mark {
+  flex-shrink: 0; width: 28px; height: 28px; background: #EFF6FF; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: #3B82F6; font-size: 0.8rem; font-weight: 700;
+}
+
+/* ─── Reviews ─── */
+.reviews { padding: 100px 0; background: #F8FAFC; }
+.reviews-header { text-align: center; margin-bottom: 56px; }
+.reviews-header h2 { font-size: 2.4rem; margin-bottom: 16px; }
+.reviews-header p { font-size: 1.05rem; color: #6B7280; max-width: 480px; margin: 0 auto; }
+.reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.review-card {
+  background: #fff; border-radius: 12px; padding: 40px; position: relative;
+  border: 1px solid #E5E7EB; transition: all 0.3s;
+}
+.review-card:hover { border-color: #BFDBFE; box-shadow: 0 4px 16px rgba(59,130,246,0.06); }
+.review-rating {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 20px;
+}
+.review-stars { color: #3B82F6; font-size: 1rem; letter-spacing: 2px; }
+.review-score { font-weight: 700; font-size: 0.9rem; color: #1B2A41; }
+.review-card blockquote { font-size: 1rem; line-height: 1.8; margin-bottom: 24px; color: #374151; }
+.review-author-row { display: flex; align-items: center; gap: 14px; }
+.review-avatar {
+  width: 44px; height: 44px; background: #EFF6FF; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: #3B82F6; font-size: 1rem;
+}
+.review-info strong { display: block; font-size: 0.95rem; color: #1B2A41; }
+.review-info span { font-size: 0.8rem; color: #9CA3AF; }
+
+/* ─── CTA ─── */
+.cta {
+  padding: 120px 0; text-align: center; position: relative; overflow: hidden;
+  background: linear-gradient(165deg, #1E293B 0%, #0F172A 100%);
+}
+.cta::before {
+  content: ''; position: absolute; bottom: -40%; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+.cta-inner { position: relative; z-index: 2; }
+.cta h2 { font-size: 2.8rem; color: #fff; margin-bottom: 16px; }
+.cta p { font-size: 1.1rem; color: #94A3B8; max-width: 540px; margin: 0 auto 40px; }
+.cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.cta-phone {
+  display: block; margin-top: 32px; font-family: 'DM Serif Display', serif;
+  font-size: 2rem; color: #3B82F6;
+}
+
+/* ─── Footer ─── */
+footer { background: #0F172A; color: #94A3B8; padding: 56px 0 28px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-top: 14px; }
+footer h4 {
+  font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase; color: #E2E8F0; margin-bottom: 16px;
+}
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 10px; }
+footer ul a { font-size: 0.9rem; color: #94A3B8; transition: color 0.3s; }
+footer ul a:hover { color: #3B82F6; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;
+  display: flex; justify-content: space-between; font-size: 0.85rem; flex-wrap: wrap; gap: 8px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { max-width: 560px; }
+  .hero h1 { font-size: 2.8rem; }
+  .services-layout { grid-template-columns: 1fr; }
+  .hiw-grid { grid-template-columns: repeat(3, 1fr); }
+  .split-grid { grid-template-columns: 1fr; }
+  .split-image { order: -1; }
+  .split-image img { height: 360px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-cta-wrap .nav-btn { display: none; }
+  .mobile-toggle { display: block; }
+  .hero { padding: 140px 0 80px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-metrics { flex-wrap: wrap; gap: 24px; }
+  .hero-visual img { height: 360px; }
+  .hero-badge-float { display: none; }
+  .seasonal .container { flex-direction: column; gap: 12px; }
+  .seasonal-divider { display: none; }
+  .hiw-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .cta h2 { font-size: 2rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.8rem; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; text-align: center; }
+  .hiw-grid { grid-template-columns: 1fr; }
+  .metric { padding-left: 16px; }
+  .metric h3 { font-size: 1.6rem; }
+}
+</style>
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-badge">Serving the Bay Area — Licensed & Insured</div>
-        <h1>Complete Home Renovation Solutions</h1>
-        <p>Roofing, kitchens, bathrooms, and more. One team for all your home improvement needs.</p>
-        <a href="tel:4159079070" class="cta-btn">Get Your Free Estimate</a>
-        <a href="tel:4159079070" class="phone-link">Or call us: (415) 907-9070</a>
-    </section>
 
-    <div class="offers">
-        <div class="offer-card">
-            <div class="discount">35% Off</div>
-            <h3>Kitchen Remodels</h3>
-            <p>Transform your kitchen with a complete remodel at an unbeatable price.</p>
-        </div>
-        <div class="offer-card">
-            <div class="discount">25% Off</div>
-            <h3>Bathroom Remodels</h3>
-            <p>Upgrade your bathroom with quality renovations tailored to your style.</p>
-        </div>
-        <div class="offer-card">
-            <div class="discount">Free</div>
-            <h3>3D Design & Rendering</h3>
-            <p>See your dream space before we build it with complimentary 3D designs.</p>
-        </div>
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container">
+    <a href="#" class="logo-mark">Roof<span>TopLy</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+    <div class="nav-cta-wrap">
+      <a href="tel:+14159079070" class="nav-phone">(415) 907-9070</a>
+      <a href="tel:+14159079070" class="nav-btn">Free Consultation</a>
     </div>
+    <button class="mobile-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <section class="section">
-        <h2>Our Services</h2>
-        <p class="subtitle">From kitchens and bathrooms to full home renovations, we handle it all.</p>
-        <div class="services-grid">
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen Remodeling">
-                <div class="content">
-                    <h3>Kitchen Remodeling</h3>
-                    <p>Custom cabinetry, countertops, fixtures, and layouts designed around how you live.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Bathroom Remodeling">
-                <div class="content">
-                    <h3>Bathroom Remodeling</h3>
-                    <p>Modern bathrooms with premium materials, expert tile work, and smart design.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Full Home Renovation">
-                <div class="content">
-                    <h3>Full Home Renovation</h3>
-                    <p>Complete home transformations that increase your property value and quality of life.</p>
-                </div>
-            </div>
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="section-label">Premium Roofing Solutions</div>
+        <h1>Your Roof. Our Expertise. <span>Bay Area's Best.</span></h1>
+        <p>RoofTopLy delivers precision-engineered roofing solutions for Bay Area homeowners. From full replacements to targeted repairs, every project is backed by 21+ years of experience and a commitment to excellence.</p>
+        <div class="hero-actions">
+          <a href="tel:+14159079070" class="btn-primary">Get Free Consultation</a>
+          <a href="#services" class="btn-secondary">Explore Services</a>
         </div>
-    </section>
-
-    <section class="process">
-        <div style="max-width:960px;margin:0 auto;">
-            <h2 style="text-align:center;margin-bottom:40px;">How It Works</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h3>Free Consultation</h3>
-                    <p>We visit your home, discuss your vision, and assess the project scope.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h3>3D Design</h3>
-                    <p>See your new space in 3D before construction begins. Completely free.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h3>Build & Install</h3>
-                    <p>Our expert team brings the design to life with quality craftsmanship.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <h3>Final Walkthrough</h3>
-                    <p>We walk through every detail together to ensure your complete satisfaction.</p>
-                </div>
-            </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <h3>21+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="metric">
+            <h3>200+</h3>
+            <p>5-Star Reviews</p>
+          </div>
+          <div class="metric">
+            <h3>3K+</h3>
+            <p>Roofs Completed</p>
+          </div>
         </div>
-    </section>
-
-    <section class="trust">
-        <h2>Why Homeowners Trust Us</h2>
-        <div class="trust-items">
-            <div class="trust-item">
-                <div class="num">21+</div>
-                <div class="label">Years Experience</div>
-            </div>
-            <div class="trust-item">
-                <div class="num">200+</div>
-                <div class="label">5-Star Reviews</div>
-            </div>
-            <div class="trust-item">
-                <div class="num">500+</div>
-                <div class="label">Projects Completed</div>
-            </div>
-            <div class="trust-item">
-                <div class="num">100%</div>
-                <div class="label">Licensed & Insured</div>
-            </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80" alt="Modern Bay Area home with premium roof">
+        <div class="hero-badge-float">
+          <div class="badge-icon">&#9733;</div>
+          <div class="badge-text">
+            <strong>Top Rated 2026</strong>
+            <span>Bay Area Roofing Contractor</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="cta-section">
-        <h2>Ready to Transform Your Home?</h2>
-        <p>Get a free estimate and see what's possible with our complimentary 3D design service.</p>
-        <a href="tel:4159079070" class="cta-btn">Call (415) 907-9070</a>
-    </section>
+<!-- Seasonal Banner -->
+<section class="seasonal">
+  <div class="container">
+    <div><strong>Free Consultation</strong> &mdash; No-obligation assessment with a certified roofing specialist</div>
+    <div class="seasonal-divider"></div>
+    <div><span>Seasonal Pricing Now Available</span> &mdash; Lock in lower rates before peak season</div>
+  </div>
+</section>
 
-    <footer>
-        <p>Rooftoply Home Services — Serving the Bay Area</p>
-        <p style="margin-top:8px;">Walnut Creek, CA</p>
-        <p style="margin-top:8px;"><a href="tel:4159079070">(415) 907-9070</a></p>
-        <p style="margin-top:16px;">&copy; 2026 Rooftoply Home Services. All rights reserved.</p>
-    </footer>
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-label">What We Do</div>
+      <h2>Comprehensive Roofing Services</h2>
+      <p>Every roofing challenge has a precise solution. We bring the right expertise and materials to every project.</p>
+    </div>
+    <div class="services-layout">
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <div>
+          <h3>Complete Roof Replacement</h3>
+          <p>Full tear-off and replacement engineered for your home's specific needs. Premium materials, manufacturer warranties, and installation by certified professionals.</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <div>
+          <h3>Targeted Roof Repair</h3>
+          <p>Precision diagnostics to identify the exact issue. We repair leaks, damaged materials, and structural problems at the source, not just the surface.</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <div>
+          <h3>New Construction Roofing</h3>
+          <p>Collaborating with builders and architects to install high-performance roofing systems on new builds that meet code and exceed expectations.</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <div>
+          <h3>Professional Roof Inspection</h3>
+          <p>Detailed assessments with photo documentation, thermal imaging, and actionable reports. Essential for real estate transactions and post-storm evaluations.</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">05</div>
+        <div>
+          <h3>Emergency Response</h3>
+          <p>Rapid deployment for storm damage, fallen debris, and sudden leaks. We secure your home fast and schedule permanent repairs on priority.</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">06</div>
+        <div>
+          <h3>Gutter &amp; Drainage Systems</h3>
+          <p>Seamless gutter installation and drainage solutions engineered to protect your roof, foundation, and landscape from water damage year-round.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works" id="process">
+  <div class="container">
+    <div class="hiw-header">
+      <div class="section-label">Our Process</div>
+      <h2>How RoofTopLy Works</h2>
+      <p>A streamlined process designed for clarity and confidence at every stage of your roofing project.</p>
+    </div>
+    <div class="hiw-grid">
+      <div class="hiw-step">
+        <div class="hiw-number">01</div>
+        <h4>Free Consultation</h4>
+        <p>We assess your roof, listen to your concerns, and outline your options with zero pressure.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-number">02</div>
+        <h4>Detailed Estimate</h4>
+        <p>Transparent, itemized pricing with materials, labor, and timeline. No hidden fees.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-number">03</div>
+        <h4>Material Selection</h4>
+        <p>Choose from certified products by GAF, CertainTeed, and Owens Corning with expert guidance.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-number">04</div>
+        <h4>Expert Installation</h4>
+        <p>Our in-house crew handles every detail. Clean worksite, daily updates, on-time delivery.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-number">05</div>
+        <h4>Final Walkthrough</h4>
+        <p>Joint inspection, warranty review, and complete satisfaction before we call it done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us / Split Feature -->
+<section class="split-feature" id="why-us">
+  <div class="container">
+    <div class="split-grid">
+      <div class="split-image">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" alt="Professional roofing installation">
+      </div>
+      <div class="split-content">
+        <div class="section-label">Why RoofTopLy</div>
+        <h2>Precision, Transparency, Results</h2>
+        <p>We built RoofTopLy on the belief that homeowners deserve a roofing partner who communicates clearly, works efficiently, and stands behind every project with real warranties and real accountability.</p>
+        <ul class="check-list">
+          <li><div class="check-mark">&#10003;</div> Licensed &amp; Fully Insured in California</li>
+          <li><div class="check-mark">&#10003;</div> 21+ Years of Roofing Experience</li>
+          <li><div class="check-mark">&#10003;</div> Certified by GAF, CertainTeed &amp; Owens Corning</li>
+          <li><div class="check-mark">&#10003;</div> In-House Crews Only — No Subcontractors</li>
+          <li><div class="check-mark">&#10003;</div> Flexible Financing Options Available</li>
+          <li><div class="check-mark">&#10003;</div> 200+ Verified 5-Star Reviews</li>
+        </ul>
+        <a href="tel:+14159079070" class="btn-primary">Schedule Your Free Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-header">
+      <div class="section-label">Client Reviews</div>
+      <h2>What Homeowners Are Saying</h2>
+      <p>Verified reviews from Bay Area homeowners who trusted RoofTopLy with their roofing projects.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-rating">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-score">5.0</div>
+        </div>
+        <blockquote>"RoofTopLy was refreshingly different from other roofing companies we contacted. No pressure tactics, just a clear assessment and an honest recommendation. The crew was professional, quiet, and efficient. Our new roof looks incredible, and the cleanup was immaculate."</blockquote>
+        <div class="review-author-row">
+          <div class="review-avatar">KT</div>
+          <div class="review-info">
+            <strong>Karen Torres</strong>
+            <span>Full Roof Replacement &mdash; Burlingame, CA</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-rating">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-score">5.0</div>
+        </div>
+        <blockquote>"We had a leak that two other companies couldn't find. RoofTopLy diagnosed it in 30 minutes and had it fixed the same day. Six months later, not a single drop. They followed up twice after the repair to make sure everything held. That's the kind of service you can't fake."</blockquote>
+        <div class="review-author-row">
+          <div class="review-avatar">RP</div>
+          <div class="review-info">
+            <strong>Robert Phan</strong>
+            <span>Roof Repair &mdash; Redwood City, CA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-label" style="color:#60A5FA;">Start Your Project</div>
+      <h2>Ready to Protect Your Home?</h2>
+      <p>Get a free, no-obligation consultation with a certified RoofTopLy specialist. Seasonal pricing available for a limited time.</p>
+      <div class="cta-buttons">
+        <a href="tel:+14159079070" class="btn-primary">Get Free Consultation</a>
+        <a href="#services" class="btn-secondary">View Our Services</a>
+      </div>
+      <a href="tel:+14159079070" class="cta-phone">(415) 907-9070</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo-mark">Roof<span>TopLy</span></a>
+        <p>Premium roofing solutions for Bay Area homes. Licensed, insured, and certified with the industry's leading manufacturers. Protecting homes for over two decades.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Roof Replacement</a></li>
+          <li><a href="#services">Roof Repair</a></li>
+          <li><a href="#services">New Construction</a></li>
+          <li><a href="#services">Roof Inspection</a></li>
+          <li><a href="#services">Emergency Response</a></li>
+          <li><a href="#services">Gutter Systems</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why-us">Why RoofTopLy</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="tel:+14159079070">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+14159079070">(415) 907-9070</a></li>
+          <li>Bay Area, California</li>
+          <li>Licensed &amp; Insured</li>
+          <li>Financing Available</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 RoofTopLy. All rights reserved.</span>
+      <span>Licensed &amp; Insured | Serving the Bay Area</span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
